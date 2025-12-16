@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas Académicas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>📘 Sistema de Gestión de Tareas</h1>
+</header>
+
+<section class="form-section">
+    <h2>Nueva / Editar Tarea</h2>
+    <form id="taskForm">
+        <input type="hidden" id="taskId">
+
+        <label>Fecha de entrega</label>
+        <input type="date" id="fecha" required>
+
+        <label>Materia</label>
+<select id="materia" required>
+    <option value="">Seleccione una materia</option>
+    <option value="Matemáticas">Matemáticas</option>
+    <option value="Sociales">Sociales</option>
+    <option value="Naturales">Naturales</option>
+    <option value="Español">Español</option>
+    <option value="Inglés">Inglés</option>
+    <option value="Alemán">Alemán</option>
+    <option value="Italiano">Italiano</option>
+    <option value="Religión">Religión</option>
+    <option value="Artística">Artística</option>
+</select>
+
+
+        <label>Prioridad</label>
+        <select id="prioridad">
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+        </select>
+
+        <label>Título</label>
+        <input type="text" id="titulo" required>
+
+        <label>Descripción</label>
+        <textarea id="descripcion" required></textarea>
+
+        <button type="submit">Guardar Tarea</button>
+    </form>
+</section>
+
+<section class="filters">
+    <select id="filterPrioridad">
+        <option value="">Todas las prioridades</option>
+        <option value="Baja">Baja</option>
+        <option value="Media">Media</option>
+        <option value="Alta">Alta</option>
+    </select>
+
+    <select id="filterMateria">
+        <option value="">Todas las materias</option>
+        <option value="Matemáticas">Matemáticas</option>
+        <option value="Sociales">Sociales</option>
+        <option value="Naturales">Naturales</option>
+        <option value="Español">Español</option>
+        <option value="Inglés">Inglés</option>
+        <option value="Alemán">Alemán</option>
+        <option value="Italiano">Italiano</option>
+        <option value="Religión">Religión</option>
+        <option value="Artística">Artística</option>
+    </select>
+
+    <select id="orderFecha">
+        <option value="">Ordenar por fecha</option>
+        <option value="asc">Más próxima</option>
+        <option value="desc">Más lejana</option>
+    </select>
+</section>
+
+<section id="tasksContainer" class="tasks-grid"></section>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalBody"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
